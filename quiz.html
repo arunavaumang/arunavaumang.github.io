@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Arrunava's Website </title>
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="style.css">
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+<body>
+    <div class="container">
+        <h1>Quiz</h1>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q1" value ="option1">
+            Answer 1 
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q1" value ="option2">
+            Answer 2
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q1" value ="option3">
+            Answer 3
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q1" value ="option4">
+            Answer 4 
+            </label>
+        </div>
+       
+        <hr>
+        
+        <div class="radio">
+        <label>
+            <input type="radio" name="q2" value ="option1">
+            Answer 1 
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q2" value ="option2">
+            Answer 2
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q2" value ="option3">
+            Answer 3
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q2" value ="option4">
+            Answer 4 
+            </label>
+        </div>
+       
+         <hr>
+        
+        <div class="radio">
+        <label>
+            <input type="radio" name="q3" value ="option1">
+            Answer 1 
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q3" value ="option2">
+            Answer 2
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q3" value ="option3">
+            Answer 3
+            </label>
+        </div>
+
+        <div class="radio">
+        <label>
+            <input type="radio" name="q3" value ="option4">
+            Answer 4 
+            </label>
+        </div>
+        
+        <button class="btn btn-primary">See Results </button>
+        <div class="alert alert-success hidden"
+            role="alert">
+            You belong to <strong id="option"></strong>
+    </div>
+        
+    <script>
+        $(function(){
+            $('button').click(function(){
+                var count ={
+                    option1: 0,
+                    option2: 0,
+                    option3: 0,
+                    option4: 0,
+                };
+                $(':checked').each(function(i, el) {
+                    var option = $(el).val();
+                    count[option]++;
+                }); 
+                
+                var max = 0;
+                var result=' ';
+                for (var key in count){
+                    if (count[key] > max){
+                        max=count[key];
+                        result=key;
+                        }
+                }
+               $('#option').text(result);
+               $('.alert').removeClass('hidden');
+            });
+      
+        });
+    </script>
+</body>
+</html>
